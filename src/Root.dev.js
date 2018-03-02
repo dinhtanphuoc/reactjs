@@ -5,7 +5,7 @@ import { RenderRoutes } from '../routes';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-const Root = ({ store, routes, history }) => (
+export default function Root({ store, routes, history }) {
   <Provider store={store}>
     <div>
       <BrowserRouter>
@@ -16,12 +16,10 @@ const Root = ({ store, routes, history }) => (
       <DevTools />
     </div>
   </Provider>
-);
+};
 
 Root.propTypes = {
   store: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,
   routes: PropTypes.array.isRequired
 }
-
-export default Root;
